@@ -1,4 +1,4 @@
-# config-language
+# config-lang
 
 Добро пожаловать в проект! Здесь находится командной строки для учебного конфигурационного языка. Этот инструмент преобразует текст из входного формата в выходной. Основная информация и инструкции помогут вам быстро начать работу.
 
@@ -21,7 +21,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone -b master https://github.com/glebvisage5/config-language.git
+   git clone -b master https://github.com/glebvisage5/config-lang.git
 2. Перейдите в папку проекта:
    ```bash
    cd имя_репозитория
@@ -90,7 +90,8 @@ npm test
 ```
 
 ## Скриншот тестов
-![image](https://github.com/user-attachments/assets/0461a8ee-3ec7-471d-b3ce-b47704f2088c)
+![image](https://github.com/user-attachments/assets/acca8c38-2735-4298-a539-17c1b568140b)
+
 
 ## Контакты
 Если у вас возникли вопросы или предложения, свяжитесь со мной:
