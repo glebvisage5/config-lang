@@ -1,0 +1,33 @@
+# Определение констант безопасности
+(define session_timeout 15);
+(define max_sessions 5);
+(define encryption_level 256);
+
+# Параметры сети
+network_settings $[
+    primary_dns: "8.8.8.8",
+    secondary_dns: "8.8.4.4",
+    max_sessions: max_sessions,
+    session_timeout: session_timeout
+]
+
+# Конфигурация VPN
+vpn_settings $[
+    server_address: "vpn.corp.com",
+    port: 1194,
+    encryption_level: encryption_level,
+    allow_split_tunneling: "false"
+]
+
+# Разрешенные группы доступа
+access_groups (list "Admin" "User" "Guest")
+
+# Конфигурация безопасности
+security_policies $[
+    enforce_2fa: "true",
+    lockout_threshold: @{* max_sessions 2},
+]
+password_policy: $[
+        min_length: 12,
+        require_special: "true"
+    ]

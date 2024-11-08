@@ -1,0 +1,6 @@
+{
+  "server_config": {
+    "timeout": 150,
+    "max_retries": 6
+  }
+}

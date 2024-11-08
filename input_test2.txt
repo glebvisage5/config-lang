@@ -1,0 +1,27 @@
+# Базовые параметры системы
+(define batch_size 1000);
+(define processing_threads 4);
+(define max_memory_usage 2048);
+
+# Параметры обработчика данных
+data_processor $[
+    batch_size: batch_size,
+    threads: processing_threads,
+    max_memory: max_memory_usage,
+    log_level: "debug"
+]
+
+# Конфигурация входных данных
+input_data $[
+    data_source: "database",
+    db_host: "db.example.com",
+    db_port: 5432,
+    retry_attempts: @{+ batch_size 5}
+]
+
+# Параметры для выгрузки данных
+output_settings $[
+    output_format: "JSON",
+    output_path: "/data/output",
+    max_file_size: @{* max_memory_usage 0.5}
+]
