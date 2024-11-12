@@ -92,6 +92,81 @@ npm test
 ## Скриншот тестов
 ![image](https://github.com/user-attachments/assets/acca8c38-2735-4298-a539-17c1b568140b)
 
+## Результаты трех примеров описаания конфигураций
+1. При запуске input_test1.txt
+```bash
+{
+  "server_config": {
+    "server_name": "example.com",
+    "listen_port": 80,
+    "max_clients": 200,
+    "timeout": 400,
+    "enable_ssl": "true"
+  },
+  "ssl_config": {
+    "cert_file": "/etc/ssl/certs/server.crt",
+    "key_file": "/etc/ssl/private/server.key",
+    "ssl_protocol": "TLSv1.2"
+  },
+  "cache_config": {
+    "enabled": "true",
+    "cache_size": 4096,
+    "cache_timeout": 600
+  }
+}
+```
+2. При запуске input_test2.txt
+```bash
+{
+  "data_processor": {
+    "batch_size": 1000,
+    "threads": 4,
+    "max_memory": 2048,
+    "log_level": "debug"
+  },
+  "input_data": {
+    "data_source": "database",
+    "db_host": "db.example.com",
+    "db_port": 5432,
+    "retry_attempts": 1005
+  },
+  "output_settings": {
+    "output_format": "JSON",
+    "output_path": "/data/output",
+    "max_file_size": 1024
+  }
+}
+```
+3. При запуске input_test3.txt
+```bash
+{
+  "network_settings": {
+    "primary_dns": "8.8.8.8",
+    "secondary_dns": "8.8.4.4",
+    "max_sessions": 5,
+    "session_timeout": 15
+  },
+  "vpn_settings": {
+    "server_address": "vpn.corp.com",
+    "port": 1194,
+    "encryption_level": 256,
+    "allow_split_tunneling": "false"
+  },
+  "access_groups": [
+    "Admin",
+    "User",
+    "Guest"
+  ],
+  "security_policies": {
+    "enforce_2fa": "true",
+    "lockout_threshold": 10
+  },
+  "password_policy:": {
+    "min_length": 12,
+    "require_special": "true"
+  }
+}
+```
 
 ## Контакты
 Если у вас возникли вопросы или предложения, свяжитесь со мной:
